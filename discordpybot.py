@@ -50,21 +50,21 @@ async def on_message(self, message):
         return
 
 
-# @client.event
-# async def on_message(message):
-#     if message.content.startswith("pouce"):
-#         channel = message.channel
-#         await channel.send("donne moi un 👍 stp")
+@client.event
+async def on_message(message):
+    if message.content.startswith("pouce"):
+        channel = message.channel
+        await channel.send("donne moi un 👍 stp")
         
-#         def check(reaction, user):
-#             return user == message.author and str(reaction.emoji) == '👍'
+        def check(reaction, user):
+            return user == message.author and str(reaction.emoji) == '👍'
 
-#         try:
-#             reaction, user = await client.wait_for('reaction_add', timeout=20, check=check)
-#         except asyncio.TimeoutError:
-#             await channel.send("t'es nul 👎")
-#         else:
-#             await channel.send("merci 👍")
+        try:
+            reaction, user = await client.wait_for('reaction_add', timeout=20, check=check)
+        except asyncio.TimeoutError:
+            await channel.send("t'es nul 👎")
+        else:
+            await channel.send("merci 👍")
 
 
 @client.command()
